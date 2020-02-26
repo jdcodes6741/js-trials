@@ -6,6 +6,21 @@ function countWords(phrase) {
   const wordCounts = {};
 
   for (const word of phrase.split(' ')) {
+    if (word in wordCounts) {
+      wordCounts[word] += 1;
+    } else {
+      wordCounts[word] = 1;
+    }
+  }
+
+  return wordCounts;
+}
+
+
+function countWords(phrase) {
+  const wordCounts = {};
+
+  for (const word of phrase.split(' ')) {
     if (wordCounts[word]) {
       wordCounts[word] += 1;
     } else {
@@ -32,3 +47,6 @@ function printMelonAtPrice(price) {
 
   return melonPrices[price].sort();
 };
+
+
+
